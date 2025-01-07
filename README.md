@@ -61,7 +61,9 @@ This project helps users optimize their health and fitness routines by providing
 
 ## 📂 **Project Structure**
 
-\`\`\`plaintext
+
+
+```
 ├── locales/
 │   ├── en.json       # English Translations
 │   ├── pt_br.json    # Portuguese Translations
@@ -76,7 +78,9 @@ This project helps users optimize their health and fitness routines by providing
 ├── main.go          # Application Entry Point
 ├── go.mod           # Go Module Configuration
 └── .gitignore       # Ignored Files
-\`\`\`
+```
+
+
 
 ---
 
@@ -88,10 +92,10 @@ Follow the steps below to set up and run the **Supplement and Hydration Calculat
 
 Start by cloning the project from GitHub and navigating to the project directory:
 
-\`\`\`bash
+```
 git clone https://github.com/itsjhonny/go-template-multi-languages.git
 cd go-template-multi-languages
-\`\`\`
+```
 
 ---
 
@@ -99,9 +103,9 @@ cd go-template-multi-languages
 
 Make sure all Go dependencies are properly installed:
 
-\`\`\`bash
+```
 go mod tidy
-\`\`\`
+```
 
 This command ensures that all required packages are fetched and the `go.mod` file is up to date.
 
@@ -111,15 +115,15 @@ This command ensures that all required packages are fetched and the `go.mod` fil
 
 Start the Go HTTP server to serve the application:
 
-\`\`\`bash
+```
 go run main.go
-\`\`\`
+```
 
 If everything is set up correctly, you will see an output like this:
 
-\`\`\`plaintext
+```
 Servidor rodando em http://localhost:8080
-\`\`\`
+```
 
 ---
 
@@ -151,9 +155,9 @@ You can also change the language dynamically using query strings:
 
 To stop the server, press:
 
-\`\`\`bash
+```
 Ctrl + C
-\`\`\`
+```
 
 ---
 
