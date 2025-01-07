@@ -98,9 +98,9 @@ func main() {
 	http.HandleFunc("/pt-br/calc", calcHandler)
 	http.HandleFunc("/es-es/calc", calcHandler)
 
-	fmt.Println("Servidor rodando em http://localhost:8080")
+	fmt.Println("server running at http://localhost:8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		fmt.Println("Erro ao iniciar servidor:", err)
+		fmt.Println("Failed to start server", err)
 	}
 }
