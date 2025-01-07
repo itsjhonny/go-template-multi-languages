@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="{{.Lang}}">
+
+{{template "head.html" .}}
+
+<body class="bg-gradient-to-r from-green-100 to-blue-200 min-h-screen p-4">
+
+    {{template "selectLang.html" .}}
+
+    <header class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 mx-auto">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">{{.Translations.title}}</h1>
+    </header>
+
+    <main class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 mt-4 mx-auto">
+        <form id="calculator" class="space-y-6" aria-labelledby="calculator-heading">
+            <h2 id="calculator-heading" class="sr-only">{{.Translations.form_heading}}</h2>
+
+            <div>
+                <label for="weight" class="block text-gray-700 text-lg font-medium">{{.Translations.weight}}</label>
+                <input type="number" id="weight" name="weight" required aria-required="true"
+                    class="mt-2 block w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                    min="1" step="0.1" placeholder="{{.Translations.weight_placeholder}}">
+            </div>
+
+            <div>
+                <label for="activity"
+                    class="block text-gray-700 text-lg font-medium">{{.Translations.activity_label}}</label>
+                <select id="activity" name="activity" aria-required="true"
+                    class="mt-2 block w-full px-4 py-3 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                    <option value="sedentary">{{.Translations.sedentary}}</option>
+                    <option value="light">{{.Translations.light}}</option>
+                    <option value="moderate">{{.Translations.moderate}}</option>
+                    <option value="active">{{.Translations.active}}</option>
+                    <option value="very_active">{{.Translations.very_active}}</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="calculate()"
+                class="w-full bg-green-500 text-white py-3 rounded-md hover:bg-green-600 transition duration-200 text-lg font-semibold h-12">
+                {{.Translations.calculate_button}}
+            </button>
+        </form>
+
+        <div id="results" class="mt-8 hidden bg-gray-100 p-6 rounded-md" aria-live="polite">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{{.Translations.results}}</h2>
+            <p class="text-gray-700 text-lg"><strong>{{.Translations.creatine}}:</strong> <span id="creatine">-</span> g
+                {{.Translations.per_day}}</p>
+            <p class="text-gray-700 text-lg"><strong>{{.Translations.whey_protein}}:</strong> <span id="whey">-</span> g
+                {{.Translations.per_day}}
+            </p>
+            <p class="text-gray-700 text-lg"><strong>{{.Translations.total_protein}}:</strong> <span
+                    id="protein">-</span> g
+                {{.Translations.per_day}}</p>
+            <p class="text-gray-700 text-lg"><strong>{{.Translations.water_intake}}:</strong> <span id="water">-</span>
+                litros
+                {{.Translations.per_day}}</p>
+        </div>
+    </main>
+
+    <section id="additional-content" class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 mt-8 mx-auto">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">{{.Translations.benefits_title}}</h2>
+        <p class="text-gray-700 mb-6">{{.Translations.benefits_description}}</p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{.Translations.creatine_section}}</h3>
+        <p class="text-gray-700 mb-4">{{.Translations.creatine_description}}</p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{.Translations.whey_section}}</h3>
+        <p class="text-gray-700 mb-4">{{.Translations.whey_description}}</p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{.Translations.hydration_section}}</h3>
+        <p class="text-gray-700 mb-4">{{.Translations.hydration_description}}</p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{.Translations.nutrition_tips_title}}</h3>
+        <p class="text-gray-700 mb-4">{{.Translations.nutrition_tips_description}}</p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>{{.Translations.tip1}}</li>
+            <li>{{.Translations.tip2}}</li>
+            <li>{{.Translations.tip3}}</li>
+            <li>{{.Translations.tip4}}</li>
+            <li>{{.Translations.tip5}}</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{.Translations.faq_title}}</h3>
+        <p class="text-gray-700 mb-4"><strong>{{.Translations.faq1_question}}</strong><br>{{.Translations.faq1_answer}}
+        </p>
+        <p class="text-gray-700 mb-4"><strong>{{.Translations.faq2_question}}</strong><br>{{.Translations.faq2_answer}}
+        </p>
+        <p class="text-gray-700 mb-4"><strong>{{.Translations.faq3_question}}</strong><br>{{.Translations.faq3_answer}}
+        </p>
+        <p class="text-gray-700 mb-4"><strong>{{.Translations.faq4_question}}</strong><br>{{.Translations.faq4_answer}}
+        </p>
+    </section>
+
+    <footer class="w-full max-w-2xl mt-8 text-center text-gray-600 text-sm mx-auto">
+        {{.Translations.footer_text}}
+    </footer>
+
+    <script src="/static/js/scripts.js"></script>
+</body>
+
+</html>

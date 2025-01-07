@@ -1,0 +1,9 @@
+<div class="w-full max-w-2xl mx-auto flex justify-end mb-4">
+    <select id="language-selector" name="language-selector"
+        class="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+        onchange="setLanguage(this.value)">
+        <option value="pt-br" {{if eq .LocaleParam "pt-br" }}selected{{end}}>Português (BR)</option>
+        <option value="en-us" {{if eq .LocaleParam "en-us" }}selected{{end}}>English (US)</option>
+        <option value="es-es" {{if eq .LocaleParam "es-es" }}selected{{end}}>Español (ES)</option>
+    </select>
+</div>
